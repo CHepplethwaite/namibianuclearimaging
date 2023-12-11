@@ -40,3 +40,28 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
+
+
+// scroll up button
+
+document.addEventListener("DOMContentLoaded", function () {
+    var scrollUpBtn = document.getElementById("scrollUpBtn");
+
+    // Show/hide scroll-up button based on scroll position
+    window.addEventListener("scroll", function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollUpBtn.style.display = "block";
+        } else {
+            scrollUpBtn.style.display = "none";
+        }
+    });
+
+    // Smooth scroll to the top when the button is clicked
+    scrollUpBtn.addEventListener("click", function () {
+        // Scroll to the top with smooth behavior
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
