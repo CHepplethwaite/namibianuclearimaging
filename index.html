@@ -64,30 +64,31 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="service.html">Services</a>
+                  <a class="nav-link" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Our facilities</a>
+                  <a class="nav-link" href="#facilities">Our facilities</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Meet our Doctors</a>
+                  <a class="nav-link" href="#doctors">Meet our Doctors</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Downloads and media</a>
+                  <a class="nav-link" href="#media">Downloads and media</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Get in Touch</a>
+                  <a class="nav-link" href="#contact">Get in Touch</a>
                 </li>
               </ul>
             </div>
+            
           </nav>
         </div>
       </div>
@@ -98,7 +99,7 @@
       <div class="container ">
         <div class="row">
           <div class="col-md-6 ">
-            <div class="detail-box">
+            <div class="detail-box"  id="home">
               <h1>
                 Namibia Nuclear Imaging
               </h1>
@@ -121,6 +122,8 @@
     </section>
     <!-- end slider section -->
   </div>
+
+  <hr>
 
   <!-- feature section -->
   <!-- <section class="feature_section">
@@ -174,17 +177,24 @@
 
   <!-- about section -->
 
-  <section class="about_section layout_padding-bottom">
-    <div class="container">
+  <section class="about_section layout_padding-bottom" >
+    <div class="container"  >
       <div class="row">
         <div class="col-lg-5 col-md-6">
-          <div class="detail-box">
+          <div class="detail-box" id="about">
             <h2>
               About us
             </h2>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-            </p>
+              World-wide, modern medicine is undergoing rapid but major transformation. Nuclear medicine and
+              molecular imaging are on the leading edge, probing deep inside the body to reveal its inner
+              workings.
+              The conventionalimaging studies produce primarily structural diagnostic images, while nuclear
+              medicine and molecular imaging reveal how the body is functioning and what's happening at the
+              cellular and molecular level. This is critically important to all facets of medicine today, from
+              diagnosing disease at its earliest stage and developing more effective therapies to personalizing
+              medical treatment.
+             </p>
             <a href="">
               Read More
             </a>
@@ -208,7 +218,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="img-box">
+          <div class="img-box"  id="services">
             <img src="images/professional-img.png" alt="">
           </div>
         </div>
@@ -551,7 +561,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        Namibia Nuclear Imaging.
       </p>
     </div>
   </footer>
@@ -562,6 +572,44 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <script src="js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Smooth scroll to section
+  $('a.nav-link').on('click', function(event) {
+    if (this.hash !== '') {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+
+  // Highlight active link
+  $(window).on('scroll', function() {
+    var scrollPos = $(window).scrollTop();
+
+    $('a.nav-link').each(function() {
+      var currLink = $(this);
+      var refElement = $(currLink.attr('href'));
+
+      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+        $('a.nav-link').removeClass('active');
+        currLink.addClass('active');
+      }
+      else {
+        currLink.removeClass('active');
+      }
+    });
+  });
+});
+</script>
+
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
