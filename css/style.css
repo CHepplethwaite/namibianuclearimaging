@@ -719,15 +719,14 @@ a:focus {
 
 .contact_section input {
   width: 100%;
-  border: none;
   height: 50px;
+  border: 1px solid;
+  border-radius: 10px;
   margin-bottom: 25px;
   padding-left: 25px;
   background-color: #ffffff;
-  outline: none;
-  color: #ffffff;
-  -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+  color: #000000;
+  
 }
 
 .contact_section input::-webkit-input-placeholder {
@@ -765,7 +764,7 @@ a:focus {
 
 .contact_section button:hover {
   background-color: transparent;
-  color: #0355cc;
+  color: #000000;
 }
 
 .contact_section .map_container {
