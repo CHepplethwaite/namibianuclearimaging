@@ -1,3 +1,10 @@
+//Adding a loader
+window.addEventListener('load', function () {
+    var loader = document.querySelector('.loader-wrapper');
+    loader.style.display = 'none';
+});
+
+
 // Get Current Year
 function getCurrentYear() {
     var d = new Date();
@@ -31,15 +38,7 @@ $(".owl-carousel").owlCarousel({
     }
 });
 
-/** google_map js **/
 
-function myMap() {
-    var mapProp = {
-        center: new google.maps.LatLng(40.712775, -74.005973),
-        zoom: 18,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
 
 
 // scroll up button
