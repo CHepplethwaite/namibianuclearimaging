@@ -778,7 +778,7 @@ a:focus {
 
 .info_section {
   padding: 75px 0;
-  background-color: #0a0f43;
+  background-color: rgb(11, 102, 124);
   text-align: center;
   color: #fff;
 }
@@ -860,7 +860,7 @@ a:focus {
   margin-top: 25px;
   color: #fff;
   margin-bottom: 0;
-  background-color: #0a0f43;
+  background-color: rgb(11, 102, 124);
 }
 
 .info_items .item:hover .img-box {
